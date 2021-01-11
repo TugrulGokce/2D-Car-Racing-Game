@@ -93,7 +93,7 @@ public class Board extends JPanel implements ActionListener {
 		carsInt++;
 	}
 
-	private void addStrips() { // seritlerin hepsini cizdirmek icin
+	private void addStrips() { // Seritleri olusturup diziye atama
 		for (int i = 0; i < 10; i++) {
 			for (int j = 1; j < 5; j++) {
 				Strips strip = new Strips(this, 100 + (j * 90), i * 80);
@@ -186,7 +186,7 @@ public class Board extends JPanel implements ActionListener {
 		gbi.setColor(Color.red);
 		gbi.fillRect(0, 0, buff.getWidth(), buff.getHeight());
 
-		// kalem ozellikleri
+		// kalemin ozellikleri
 		gbi.setColor(Color.BLACK);
 		gbi.setFont(new Font("Consolas", Font.BOLD, 35));
 
@@ -210,7 +210,7 @@ public class Board extends JPanel implements ActionListener {
 		gbi.setColor(Color.gray);
 		int wh = 10;
 		gbi.fillRect(wh, wh, buff.getWidth() - 2 * wh, buff.getHeight() - 2 * wh);
-		// yazýlar
+		// yazilar
 		gbi.setColor(Color.BLACK);
 		gbi.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
 
@@ -222,7 +222,7 @@ public class Board extends JPanel implements ActionListener {
 		// restart
 		gbi.drawImage(this.restart.getImage(), (buff.getWidth() - this.restart.getWidth()) / 2, 120, null);
 
-		// skor tablo Score :
+		// skor tablosu
 		str = "Score : " + this.score;
 		gbi.drawString(str, (buff.getWidth() - fm.stringWidth(str)) / 2, 250);
 
@@ -309,8 +309,8 @@ public class Board extends JPanel implements ActionListener {
 				Cars otherCars = cars.get(j);
 
 				// carpisma kontrolu
-				if (myCar.collisionControl(otherCars)) { // arraylist icindeki arabalarla kendi arabam carpisti mi //
-															// konrol
+				if (myCar.collisionControl(otherCars)) { // arraylist icindeki arabalarla kendi arabam carpisti mi kontrol et
+															 
 					myCar.collisionControls(otherCars); // abstract metodu calistir (oyun bitirme ekranini goster)
 				}
 			}
